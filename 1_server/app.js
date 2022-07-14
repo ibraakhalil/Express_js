@@ -10,6 +10,18 @@ app.get("/",(req,res)=> {
     res.sendFile(__dirname + "/views/index.html");
 });
 
+app.get("/register",(req,res)=> {
+    res.statusCode = 202;
+    res.sendFile(__dirname + "/views/registration.html")
+    res.cookie("name","ibrahim")
+})
+
+app.get("/login",(req,res)=> {
+    res.statusCode = 202;
+    res.sendFile(__dirname + "/views/login.html");
+    res.cookie("name","ibrahim")
+})
+
 app.use((req,res)=>{
     res.send("<h1> 404 Not found </h1>") 
 }) 
